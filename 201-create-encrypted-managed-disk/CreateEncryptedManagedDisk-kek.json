@@ -14,6 +14,12 @@
         "description": "Name of the managed disk to be copied"
       }
     },
+    "diskSizeGB": {
+        "type": "String",
+        "metadata": {
+            "description": "disk size in GB"
+        }
+    },
     "keyVaultResourceID": {
       "type": "string",
       "metadata": {
@@ -45,7 +51,6 @@
     "location": "[resourceGroup().location]",
     "computeResouresApiVersion": "2016-04-30-preview",
     "storageAccountType": "Standard_LRS",
-    "diskSzie": "128"
   },
   "resources": [
     {
@@ -59,7 +64,7 @@
           "sourceUri": "[parameters('vhdUri')]"
         },
         "accountType": "[variables('storageAccountType')]",
-        "diskSizeGB": "[variables('diskSzie')]",
+        "diskSizeGB": "[parameters('diskSizeGB')]",
         "encryptionSettings": {
           "enabled": true,
           "diskEncryptionKey": {
