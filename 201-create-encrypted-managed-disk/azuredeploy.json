@@ -8,6 +8,12 @@
                "description": "Storage VHD Uri"
             }
         },
+        "diskSizeGB": {
+            "type": "string",
+            "metadata": {
+               "description": "Size of disk"
+            }
+        },
         "managedDiskName": {
             "type": "string",
             "metadata": {
